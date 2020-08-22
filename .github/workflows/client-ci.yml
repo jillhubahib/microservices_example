@@ -1,14 +1,14 @@
-name: CI
+name: Client App CI
 
 on:
   push:
     branches: [ master ]
     paths:
-    - twitter_url_extractor_client/**
+    - 'twitter_url_extractor_client/**'
   pull_request:
     branches: [ master ]
     paths:
-    - twitter_url_extractor_client/**
+    - 'twitter_url_extractor_client/**'
 
 env:
   RAILS_ENV: test
