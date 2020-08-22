@@ -13,11 +13,11 @@ on:
 env:
   RAILS_ENV: test
 
-jobs:
-  defaults:
-    run:
-      working-directory: twitter_url_extractor_client
+defaults:
+  run:
+    working-directory: twitter_url_extractor_client
 
+jobs:
   ruby_dependencies:
     name: Ruby - download and cache dependencies
     runs-on: ubuntu-latest
