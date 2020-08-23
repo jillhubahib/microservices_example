@@ -26,6 +26,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Check workding directory
+        run: pwd
+
       - name: Install Ruby version specified in `.ruby-version`
         uses: eregon/use-ruby-action@master
 
