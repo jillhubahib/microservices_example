@@ -32,7 +32,7 @@ jobs:
       - name: Install Ruby version specified in `.ruby-version`
         uses: eregon/use-ruby-action@master
         with:
-          path: twitter_url_extractor_client
+          directory: twitter_url_extractor_client
 
       - name: Ruby gem cache
         uses: actions/cache@v1
