@@ -15,7 +15,7 @@ env:
 
 defaults:
   run:
-    working-directory: ./twitter_url_extractor_client
+    working-directory: twitter_url_extractor_client
 
 jobs:
   ruby_dependencies:
