@@ -27,10 +27,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Check workding directory
-        run: pwd
+        run: pwd && ls .ruby-version
 
       - name: Install Ruby version specified in `.ruby-version`
         uses: eregon/use-ruby-action@master
+        # with:
+        #   path: twitter_url_extractor_client
 
       - name: Ruby gem cache
         uses: actions/cache@v1
