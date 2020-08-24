@@ -50,6 +50,7 @@ jobs:
       postgres:
         image: postgres:12.3-alpine
         env:
+          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
@@ -80,9 +81,17 @@ jobs:
 
       - name: Setup test database
         run: bundle exec rails db:create db:migrate
+        env:
+          RAILS_ENV: test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
 
       - name: Run RSpec
         run: bundle exec rspec
+        env:
+          RAILS_ENV: test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
 
   rubocop:
     name: Run Rubocop
