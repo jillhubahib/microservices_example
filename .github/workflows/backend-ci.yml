@@ -45,9 +45,12 @@ jobs:
     name: Run RSpec
     runs-on: ubuntu-latest
     needs: ruby_dependencies
+
     services:
       postgres:
         image: postgres:12.3-alpine
+        env:
+          POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
