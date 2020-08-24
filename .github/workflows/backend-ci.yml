@@ -50,7 +50,6 @@ jobs:
       postgres:
         image: postgres:12.3-alpine
         env:
-          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
