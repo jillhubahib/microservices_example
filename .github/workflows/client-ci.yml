@@ -104,7 +104,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.4.6 # This is the action
         with:
-          working-directory: twitter_url_extractor_client
+          appdir: twitter_url_extractor_client
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: twitter-url-extractor-client
           heroku_email: ${{secrets.HEROKU_EMAIL}}
