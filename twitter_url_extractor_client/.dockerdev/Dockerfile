@@ -13,7 +13,6 @@ RUN apt-get update -qq \
     gnupg2 \
     curl \
     less \
-    vim \
     git \
   && apt-get clean \
   && rm -rf /var/cache/apt/archives/* \
@@ -47,31 +46,22 @@ RUN apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get -yq dist-upgrad
 # Configure bundler
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \
-  BUNDLE_RETRY=3 \
-  BUNDLE_APP_CONFIG=.bundle
+  BUNDLE_RETRY=3
+
+# Uncomment this line if you store Bundler settings in the project's root
+# ENV BUNDLE_APP_CONFIG=.bundle
+
+# Uncomment this line if you want to run binstubs without prefixing with `bin/` or `bundle exec`
+# ENV PATH /app/bin:$PATH
 
 # Upgrade RubyGems and install required Bundler version
+# See https://github.com/evilmartians/terraforming-rails/pull/24 for discussion
 RUN gem update --system && \
-    gem install bundler:$BUNDLER_VERSION
-
-# Run binstubs without prefixing with `bin/` or `bundle exec`
-ENV PATH /app/bin:$PATH
+    rm /usr/local/lib/ruby/gems/*/specifications/default/bundler-*.gemspec && \
+    gem uninstall bundler && \
+    gem install bundler -v $BUNDLER_VERSION
 
 # Create a directory for the app code
 RUN mkdir -p /app
 
 WORKDIR /app
-
-COPY Gemfile Gemfile.lock ./
-
-RUN bundle config build.nokogiri --use-system-libraries
-
-# RUN bundle check || bundle install
-
-COPY package.json yarn.lock ./
-
-RUN yarn install --check-files
-
-COPY . ./
-
-ENTRYPOINT ["./docker-entrypoint.sh"]

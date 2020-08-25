@@ -15,4 +15,6 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import "../src/application.scss"
+require("alpinejs")
+import "../stylesheets/application.scss"
+import "controllers"

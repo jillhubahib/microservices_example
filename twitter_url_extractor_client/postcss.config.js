@@ -4,6 +4,9 @@ let environment = {
     require('autoprefixer'),
     require('postcss-import'),
     require('postcss-flexbugs-fixes'),
+    require('cssnano')({
+      preset: 'default',
+    }),
     require('postcss-preset-env')({
       autoprefixer: {
         flexbox: 'no-2009'
