@@ -61,3 +61,17 @@ ENV PATH /app/bin:$PATH
 RUN mkdir -p /app
 
 WORKDIR /app
+
+COPY Gemfile Gemfile.lock ./
+
+RUN bundle config build.nokogiri --use-system-libraries
+
+# RUN bundle check || bundle install
+
+COPY package.json yarn.lock ./
+
+RUN yarn install --check-files
+
+COPY . ./
+
+ENTRYPOINT ["./docker-entrypoint.sh"]
