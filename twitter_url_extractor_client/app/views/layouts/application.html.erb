@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
   <head>
     <title>TwitterUrlExtractorClient</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
-
     <%= stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
