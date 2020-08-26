@@ -15,8 +15,8 @@ Imagine that you don't want to or just don't have enough time to go through enti
 
 #### Client/UI
 
-- [ ] Setup StimulusJS, Tailwind CSS and the theme to use
-- [ ] Implement authentication with Auth0 (Twitter)
+- [x] Setup StimulusJS, Tailwind CSS and the theme to use
+- [x] Implement authentication with Auth0 (Twitter)
 - [ ] Allow user to input date and email
 - [ ] Setup RabbitMQ and then publish these inputs to it
 
