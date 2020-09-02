@@ -15,8 +15,8 @@ You don't have enought time to go through entire Twitter feeds daily and you're 
 #### Client/UI
 
 - [x] Setup StimulusJS, Tailwind CSS and the theme to use
-- [x] Implement authentication with Auth0 (Twitter)
-- [ ] Allow user to input date and email
+- [x] Implement Twitter authentication
+- [x] Allow user to input date and email
 - [ ] Setup RabbitMQ and then publish these inputs to it
 
 #### Backend

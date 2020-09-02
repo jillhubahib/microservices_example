@@ -1,4 +1,6 @@
 class Auth0Controller < ApplicationController
+  layout "blank", only: :failure
+
   # Set session[:userinfo] when authentication succeeds
   def callback
     session[:userinfo] = request.env["omniauth.auth"]

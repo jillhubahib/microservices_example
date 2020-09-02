@@ -1,22 +1,5 @@
-# README
+Client app for a [microservice architecture set-up](https://github.com/jillhubahib/microservices_example).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+### Tasks
+[ ] Remove Auth0, authenticate directly to Twitter
+[ ] Fix datepicker issue when moving to a month using the arrow button
